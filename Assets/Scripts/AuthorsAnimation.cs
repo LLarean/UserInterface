@@ -6,25 +6,25 @@ public class AuthorsAnimation : MonoBehaviour
 {
     [SerializeField] private Button _author;
     [SerializeField] private Color _colorTo;
-    private Color _startColor;
+    // private Color _startColor;
     private Image _image;
 
     private void Start()
     {
         _author.onClick.AddListener(ChangeColor);
         _image = _author.GetComponent<Image>();
-        _startColor = _image.color;
+        // _startColor = _image.color;
     }
 
     private void ChangeColor()
     {
-        if (_image.color == _colorTo)
+        if (_image.color == Color.white)
         {
-            _image.DOColor(_startColor, 2f);
+            _image.DOColor(_colorTo, 1f);
         }
         else
         {
-            _image.DOColor(_colorTo, 2f);
+            _image.DOColor(Color.white, 1f);
         }
     }
 }
